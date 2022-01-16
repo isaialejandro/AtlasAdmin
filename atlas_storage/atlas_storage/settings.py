@@ -10,7 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
-from pathlib import Path
+from pathlib import os, Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -20,12 +20,18 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-x^ppo+k58*_i2s-*s)r37_i-72@pgg#au6+kd!rp!8w+s(o6wc'
+SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY')
+# 'django-insecure-x^ppo+k58*_i2s-*s)r37_i-72@pgg#au6+kd!rp!8w+s(o6wc'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    '0.0.0.0',
+    'localhost',
+    '127.0.0.1',
+    'atlas-a.herokuapp.com'
+]
 
 
 # Application definition
@@ -75,6 +81,16 @@ WSGI_APPLICATION = 'atlas_storage.wsgi.application'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
 
+"""DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'atlas_admin_db',
+        'USER': 'atlas_admin',
+        'PASSWORD': 'mario bross 2',
+        'HOST': '10.0.0.23',
+        'PORT': 5432,
+    }
+}"""
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
@@ -85,7 +101,6 @@ DATABASES = {
         'PORT': 5432,
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
@@ -122,6 +137,15 @@ USE_TZ = False
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
 STATIC_URL = 'static/'
+#location where django collect all static files
+STATIC_ROOT = os.path.join(BASE_DIR,'static')
+# location where you will store your static files
+STATICFILES_DIRS = [os.path.join(BASE_DIR,'atlas_storage/static')]
+
+
+# For media files:
+MEDIA_ROOT = os.path.join(BASE_DIR,'media')
+MEDIA_URL = '/media/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
@@ -129,3 +153,5 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # TIME_INPUT_FORMATS = ('%I:%M:%S %p',) # 6:22:44 PM
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'

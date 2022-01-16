@@ -12,6 +12,7 @@ django-filter = "*"
 djangoql = "*"
 psycopg2 = "*"
 django-import-export = "*"
+gunicorn = "*"
 
 [dev-packages]
 
