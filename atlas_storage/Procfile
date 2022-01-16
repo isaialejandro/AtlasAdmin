@@ -1,1 +1,1 @@
-web: gunicorn atlas_storage.wsgi
+web: gunicorn atlas_storage.wsgi --log-file -
