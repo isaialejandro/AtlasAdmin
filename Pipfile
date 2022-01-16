@@ -13,6 +13,7 @@ djangoql = "*"
 psycopg2 = "*"
 django-import-export = "*"
 gunicorn = "*"
+whitenoise = "*"
 
 [dev-packages]
 
