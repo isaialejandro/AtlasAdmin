@@ -99,11 +99,11 @@ WSGI_APPLICATION = 'atlas_storage.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': os.getenv('DB_NAME'),
-        'USER': os.getenv('USER'),
-        'PASSWORD': os.getenv('PASSWORD'),
-        'HOST': os.getenv('HOST'),
-        'PORT': os.getenv('PORT'),
+        'NAME': os.environ.get('DB_NAME'),
+        'USER': os.environ.get('USER'),
+        'PASSWORD': os.environ.get('PASSWORD'),
+        'HOST': os.environ.get('HOST'),
+        'PORT': os.environ.get('PORT'),
     }
 }
 
