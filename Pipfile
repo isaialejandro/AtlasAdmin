@@ -12,6 +12,9 @@ django-filter = "*"
 djangoql = "*"
 psycopg2 = "*"
 django-import-export = "*"
+gunicorn = "*"
+whitenoise = "*"
+django-heroku = "*"
 
 [dev-packages]
 
