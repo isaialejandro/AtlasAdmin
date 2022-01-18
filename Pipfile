@@ -15,6 +15,7 @@ django-import-export = "*"
 gunicorn = "*"
 whitenoise = "*"
 django-heroku = "*"
+dj-database-url = "*"
 
 [dev-packages]
 
