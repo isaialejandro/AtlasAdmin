@@ -14,9 +14,6 @@ from pathlib import os, Path
 import django_heroku
 
 
-# Activate Django-Heroku.
-django_heroku.settings(locals())
-
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -160,3 +157,4 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # TIME_INPUT_FORMATS = ('%I:%M:%S %p',) # 6:22:44 PM
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
