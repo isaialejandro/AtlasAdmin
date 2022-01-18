@@ -20,3 +20,8 @@ urlpatterns = [
     path('', admin.site.urls),
     
 ]
+
+# Setting up Django admin Site:
+admin.site.site_header  =  "Atlas-Admin"  
+admin.site.site_title  =  "Atlas Administración de Planta"
+admin.site.index_title  =  "Atlas Administración de Planta"
