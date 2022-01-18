@@ -138,11 +138,13 @@ USE_TZ = False
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
-STATIC_URL = 'static/'
-#location where django collect all static files
+STATIC_URL = '/static/'
+# Location where django collect all static files
 STATIC_ROOT = os.path.join(BASE_DIR,'static')
-# location where you will store your static files
-STATICFILES_DIRS = [os.path.join(BASE_DIR,'atlas_storage/static')]
+# Location where you will store your static files
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR,'static')
+]
 
 
 # For media files:
