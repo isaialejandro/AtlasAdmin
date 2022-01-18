@@ -1,0 +1,22 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+django = "*"
+djangorestframework = "*"
+pillow = "*"
+markdown = "*"
+django-filter = "*"
+djangoql = "*"
+psycopg2 = "*"
+django-import-export = "*"
+gunicorn = "*"
+whitenoise = "*"
+django-heroku = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.9"
